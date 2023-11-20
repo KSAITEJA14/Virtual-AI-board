@@ -4,30 +4,14 @@ import mediapipe as mp
 import numpy as np
 from detectActions import detectAction, checkColor
 
-## Video feed loop
-# while True : 
-#     success, frame = cap.read()
-
-
 # def mediapipe_results(frame_infos):
 def mediapipe_results(frame,circles,color_change,color_num,pen_color,pen_size,mpHands,hands,mp_draw):
-
-    #initialization---------------------------------------------------------------------------------------------------------->>>>>
 
     flip = True 
     eraser_size = 100
    
-    ## cv2 text parameters
-    # font = cv2.FONT_HERSHEY_SIMPLEX
-    # fontScale = 1
-    # fontColor = (255,255,255)
-    # lineType = 4
-
     ## Stores previously drawing circles to give continous lines
     pen_color_changes = {0:"(255,0,0)",1:"(0,255,0)",2:"(0,0,255)",3:"(0,0,0)"}
-
-
-    #code starts from here---------------------------------------------------------------------------------------------------------->>>>>
 
     if flip : 
         frame = cv2.flip(frame,1)

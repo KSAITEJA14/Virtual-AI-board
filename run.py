@@ -4,10 +4,8 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_holistic = mp.solutions.holistic
 
-
 import tensorflow as tf
 from draw_vid import mediapipe_results
-
 
 def set_gpu_memory_growth():
     physical_devices = tf.config.experimental.list_physical_devices('GPU')
@@ -60,7 +58,7 @@ with mp_holistic.Holistic(
             frame, circles, pen_size, pen_color, color_change, color_num = mediapipe_results(frame, circles, color_change, color_num,
                                                                                     pen_color, pen_size, mpHands, hands,
                                                                                     mp_draw)
-
+            
             for position in range(len(circles)):
                 pen_color = circles[position][1]
                 frame = cv2.circle(frame, circles[position][0], pen_size, pen_color, -2)
@@ -69,7 +67,7 @@ with mp_holistic.Holistic(
             
             if cv2.waitKey(5) & 0xFF == 27:
                 break
-            
+    
     # Flip the image horizontally for a selfie-view display.
     # cv2.imwrite(f"images/{i}.png",image)
     
