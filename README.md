@@ -6,7 +6,7 @@ This project is designed to create a virtual AI board that can recognize and int
 
 ## System Requirements
 - Python 3.8 or above
-- Required Python libraries: [list any libraries that need to be installed]
+- Required Python libraries (requirements.txt)
 - Docker (optional for containerization)
 
 ## Installation Steps
@@ -31,17 +31,7 @@ If you are using Docker, follow these steps to build and run the project in a co
 ## Additional Information
 - The project uses a specific hand marker system as shown in the `hand_marks.png` image. Each marker corresponds to a specific point on the hand that the AI will track.
 
-FOR DRAWING:
-
-thumb finger should be left to the index finger 
-logic: 
-   thumb_tip_x > index_finger_MCP_x 
-
-FOR CHANGING COLORS:
-
-Thumb and index finger should be below the wrist
-logic: 
-    if wrist_y > index_finger_leftmost_y > index_finger_MCP_y:
-        curr_result = True
+## Demonstration
+- Hand actions for drawing, erasing and changing colors are demonstrated in the video below
 
 https://github.com/VSMourya/Virual-AI-board/assets/30852815/45149548-5ffb-4049-a5f1-107dd2649944
